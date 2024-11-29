@@ -23,6 +23,22 @@
   </head>
 
   <body>
+    <% if user_signed_in? %>
+      <ul>
+       <li>
+          <%= link_to 'アカウント編集', edit_user_registration_path %>
+        </li>
+        <li>
+          <%= link_to 'ログアウト', destroy_user_session_path, data: { turbo_method: :delete } %>
+        </li>
+      </ul>
+    <% end %>
+    <% if notice.present? %>
+      <p id="notice"><%= notice %></p>
+    <% end %>
+    <% if alert.present? %>
+      <p id="alert"><%= alert %></p>
+    <% end %>
     <%= yield %>
   </body>
 </html>
