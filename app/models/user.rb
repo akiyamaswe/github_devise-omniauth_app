@@ -22,7 +22,7 @@ class User < ApplicationRecord
     User.create!(
       provider: auth.provider,
       uid: auth.uid,
-      email: auth.info.email || "#{auth.uid}@example.com",
+      email: auth.info.email || "#{auth.provider}_#{auth.uid}@example.com",
       password: Devise.friendly_token[0, 20]
     )
   end
