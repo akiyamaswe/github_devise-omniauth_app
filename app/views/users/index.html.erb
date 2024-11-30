@@ -1,0 +1,15 @@
+<h1>ユーザの一覧</h1>
+
+<div>
+  <% @users.each do |user| %>
+    <div>
+      <p>
+        <strong>Eメール:</strong>
+        <%= user.email %>
+      </p>
+      <p>
+        <%= link_to 'このユーザを表示', user %>
+      </p>
+    </div>
+  <% end %>
+</div>
